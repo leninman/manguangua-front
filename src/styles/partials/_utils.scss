@@ -1,0 +1,32 @@
+@mixin scrollBar {
+  /* Tamaño del scroll */
+  .container::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  /* Estilos barra (thumb) de scroll */
+  .container::-webkit-scrollbar-thumb {
+    background: #ebebeb71;
+    border-radius: 4px;
+  }
+
+  .container::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+  }
+
+  .container::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Estilos track de scroll */
+  .container::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  .container::-webkit-scrollbar-track:hover,
+  .container::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+  }
+}

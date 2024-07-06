@@ -1,0 +1,607 @@
+@import '@styles/styles.scss';
+@include scrollBar;
+
+#pagingBox{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 15px;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+
+  .block{
+    color: #37474F !important;
+    background-color: #ECEFF1 !important;
+    border: 1px solid #90A4AE;
+    cursor: default;
+  }
+
+  .selected{
+    background-color: #43A047 !important;
+    color: #FFF !important;
+  }
+
+  div {
+    border: 1px solid #C8E6C9;
+    border-radius: 50%;
+    //background-color: #E8F5E9;
+     background-color: #2ECC71;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+   // cursor: pointer;
+    //color: #2E7D32;
+     color: white;
+    padding: 15px 0px 3px 0px;
+    text-align: center;
+
+    &:hover{
+      //background-color: #43A047;
+      //color: #FFF;
+
+      @include mobile{
+        background-color: #E8F5E9;
+        color: #2E7D32;
+      }
+    }
+
+  }
+}
+
+.title{
+  &-h2 {
+    color: #F4511E;
+  }
+
+  small{
+    color: #90A4AE;
+  }
+}
+
+.v-slide-group__container{
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  flex: none !important;
+  .v-tab--selected{
+    background-color: #ECEFF1 !important;
+    color: #ff7043 !important;
+  }
+}
+
+.description{
+
+  position: relative;
+
+  h2 {
+    color: #BF360C;
+    flex-wrap: wrap;
+    text-align: center;
+    // margin-bottom: 5%;
+    // margin-top: 5%;
+  }
+
+  &-features{
+    padding: revert;
+    li{
+      list-style-position: inside !important;
+      list-style-type: inherit !important;
+      span{
+        color: #BF360C;
+      }
+    }
+  }
+
+  &-container{
+    bottom: 5%;
+    padding: 10px;
+    bottom: 5%;
+    width: 100%;
+
+    button{
+      background-color:#43A047 !important;
+      color: #fff;
+      @include mobile{
+        position: fixed;
+        width: 50% !important;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1000;
+      }
+    }
+  }
+  &-warning{
+    text-align: justify;
+    padding: 0px 50px 30px 35px;
+    &-icon{
+      color: #FFAB00;
+      span{
+        color: #37474F;
+      }
+    }
+  }
+}
+
+.raffle{
+  &-card{
+    position: relative;
+    &-title{
+      color: #F4511E !important;
+    }
+    &-button{
+      background-color: #43A047 !important;
+      color: #fff;
+    }
+    &-description{
+      padding-bottom: 0px !important;
+      ul{
+        list-style: none;
+      }
+    }
+    .v-card-item{
+      padding-bottom: 10px !important;
+    }
+    &-date{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 100;
+      color: white;
+      background-color: #000000a4 !important;
+      font-size: 0.875rem;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      padding-top: 5px;
+    }
+  }
+  .v-window__controls{
+    .v-btn--elevated{
+      background-color: #eceff12f !important;
+      color: black !important;
+    }
+  }
+  .v-carousel__controls{
+    background-color: transparent !important;
+  }
+  .more-description{
+    text-align: justify;
+  }
+}
+
+.toolbar{
+
+
+  &-breadcrumbs{
+    padding: 5px !important;
+    ul{
+      padding-bottom: 0px !important;
+    }
+  }
+}
+
+.v-card-item{
+  padding-top: 10px;
+}
+
+.list-numbers{
+  &-search{
+    position: relative;
+    &-icon{
+      // cursor: pointer;
+      // position: absolute;
+      // right: 18px;
+      // top: 16px;
+      // background-color: #2E7D32;
+      cursor: pointer;
+      color: #fff;
+      position: absolute;
+      right: 14px;
+      top: 11px;
+      background-color: #90A4AE;
+      font-size: 35px;
+      border-radius: 100px;
+      padding: 6px;
+    }
+
+    &-input{
+      border: 1px solid #90A4AE;
+      position: absolute;
+      right: 15px;
+    }
+    // button{
+    //   position: absolute;
+    //   right: 25px;
+    //   top: 8px;
+    // }
+    // input{
+    //   padding-right: 25px;
+    // }
+    // @include mobile{
+    //  padding: 0px !important;
+    // }
+  }
+}
+
+.infoModal{
+
+  .v-expansion-panel__shadow{
+    box-shadow: none !important;
+  }
+  .v-expansion-panel-text{
+    background-color: #ECEFF1;
+  }
+  .v-expansion-panel-title--active{
+    background-color: #546E7A;
+    color: #fff;
+  }
+  .v-card-title{
+    span{
+      color: #F4511E;
+    }
+  }
+  .v-expansion-panels{
+    button{
+      border: 0px !important;
+      border-bottom: 1px solid #c8c8c8 !important;
+      border-radius: 0px !important;
+    }
+  }
+  .v-card-actions{
+    justify-content: end;
+    position: sticky;
+    bottom: 0px;
+    z-index: 1000;
+    button{
+      &:first-child{
+        background-color: #546E7A;
+        span{
+          color: #fff;
+        }
+      }
+      &:last-child{
+        background-color: #43A047;
+        span{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &-numbers{
+    max-width: none !important;
+    .v-card-text{
+      max-height: 180px;
+      overflow-y: scroll;
+      .v-chip {
+        background-color: #43A047 !important;
+        color: #fff;
+        border: 1px solid #90A4AE;
+      }
+    }
+  }
+}
+
+
+
+#divInput{
+
+  margin-left: 10px;
+
+}
+
+#selectedNumber{
+
+  width: 192px;
+
+}
+
+#cleanButton{
+
+  width: 60px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#divTable{
+
+  margin-right: 10px; 
+  margin-left: 10px;
+  
+}
+
+#raffleTable{
+
+  table-layout: fixed; 
+  width: 100%; 
+  border-collapse: collapse;
+  border: solid 1px black; 
+  border-top-left-radius: 20px;   
+  text-align: center;
+
+}
+
+#thAction, #thAmount{
+
+  width: 15%;
+  text-align: center;
+  background-color:gainsboro
+}
+
+#thProduct{
+
+  width: 30%;
+  text-align: center;
+  background-color:gainsboro
+
+}
+
+#thRaffle{
+
+  width: 20%;
+  text-align: center;
+  background-color:gainsboro
+
+}
+
+#thNumber{
+
+  width: 18%;
+  text-align: center;
+  background-color:gainsboro
+
+}
+
+#divTotalAndCurr{
+
+  display: flex;
+  flex-direction: row-reverse; 
+  text-align: center;
+  font-weight: bold;
+  border: solid 1px black;
+  margin-right: 10px; 
+  margin-left: 10px;
+
+}
+
+#divTotalAmount{
+
+  width:15%
+}
+
+#divCurrency{
+
+  width:16%
+
+}
+
+#divTableLeyend{
+
+  display: flex; 
+  margin-left:10px; 
+  justify-content: space-around
+
+}
+
+#divAvailable, #divNotAvailable{
+
+  display:flex;
+
+}
+
+#circleAvailable{
+
+  background-color: #2ECC71; 
+
+}
+
+#circleNotAvailable{
+
+  background-color: #ECEFF1;
+
+}
+
+.circle{
+
+  width:20px; 
+  height:20px; 
+  border-radius: 50%;  
+  border:1px solid gray
+  
+}
+
+.divText{
+
+  margin-left: 5px;
+
+}
+
+
+@media only screen and (max-width : 320px) and (orientation : landscape) {
+
+  #thAction{
+
+    width:18%
+
+  }
+
+  #thRaffle, #thNumber, #thAmount{
+
+    width:20%
+  }
+
+  #divTable, #divTotalAndCurr{
+
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size:13px
+  }
+
+  .circle{
+
+    width:28px
+  }
+
+  #divInput{
+
+    margin-left: 0px;
+  
+  }
+
+  #selectedNumber, .divText{
+
+    font-size: 14px;
+  }
+
+  #cleanButton {
+
+    font-size: 13px;
+  }
+
+}
+
+
+@media only screen and (max-width : 412px) and (orientation : portrait) {
+
+
+  .circle{
+
+    width:23px
+
+  }
+
+}
+
+@media only screen and (max-width : 395px) and (orientation : portrait) {
+
+
+  #thAction{
+
+    width:18%
+
+  }
+
+  #thRaffle, #thNumber, #thAmount{
+
+    width:20%
+  }
+
+  #divTable, #divTotalAndCurr{
+
+    font-size:13px
+  }
+
+  .circle{
+
+    width:23px
+  }
+
+  #selectedNumber, .divText{
+
+    font-size: 14px;
+  } 
+
+  #cleanButton {
+
+    font-size: 13px;
+  }
+
+
+
+}
+
+@media only screen and (max-width : 360px) and (orientation : portrait) {
+
+ 
+  #thAction{
+
+    width:18%
+
+  }
+
+  #thRaffle, #thNumber, #thAmount{
+
+    width:20%
+  }
+
+  #divTable, #divTotalAndCurr{
+
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size:13px
+  }
+
+  .circle{
+
+    width:25px
+  }
+
+  #divInput{
+
+    margin-left: 0px;
+  
+  }
+  
+
+  #selectedNumber, .divText{
+
+    font-size: 14px;
+  }
+
+  #cleanButton {
+
+    font-size: 13px;
+  }
+
+}
+
+
+@media only screen and (max-width : 320px) and (orientation : portrait) {
+
+ 
+  #thAction{
+
+    width:18%
+
+  }
+
+  #thRaffle, #thNumber, #thAmount{
+
+    width:20%
+  }
+
+  #divTable, #divTotalAndCurr{
+
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size:13px
+  }
+
+  .circle{
+
+    width:28px
+  }
+
+  #divInput{
+
+    margin-left: 0px;
+  
+  }
+  
+
+  #selectedNumber, .divText{
+
+    font-size: 14px;
+  }
+
+  #cleanButton {
+
+    font-size: 13px;
+  }
+
+}
+
+
+
+

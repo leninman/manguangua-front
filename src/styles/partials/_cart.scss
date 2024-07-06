@@ -1,0 +1,56 @@
+@include scrollBar;
+.cart {
+  position: relative;
+  .v-navigation-drawer__content{
+    background-color: #ECEFF1;
+  }
+  // &-botton{
+  //   position: sticky;
+  //   bottom: 0%;
+  //   z-index: 100;
+  // }
+  &-header {
+    position: relative;
+    background-color: #455A64;
+    color: #fff !important;
+    &-close {
+      position: absolute;
+      right: 15px;
+      font-size: 25px;
+    }
+  }
+  &-titleItem{
+    position: relative;
+    border: 1px solid #ECEFF1;
+    span{
+      padding-right: 5%;
+    }
+    &-delete{
+      position: absolute;
+      right: 4%;
+      font-size: 18px;
+    }
+  }
+  &-body{
+    height: 84.9%;
+    overflow-y: scroll;
+    background-color: #fff;
+    .v-expansion-panel{
+      border-radius: 0px !important;
+    }
+    @include mobile{
+      height: 78%
+    }
+  }
+
+  .v-chip {
+    background-color: #43A047 !important;
+    color: #fff;
+    border: 1px solid #90A4AE;
+  }
+
+  &-footer{
+    background-color: #ECEFF1;
+    height: 10%;
+  }
+}

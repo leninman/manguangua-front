@@ -1,0 +1,40 @@
+.alert{
+  &-title{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 0px;
+    border-radius: 0px 0px 4000px 0px;
+
+    .alert{
+      background-color: #ffb74d14;
+      color: #FFB74D;
+    }
+    .success{
+      background-color: #81c7842b;
+      color: #81C784;
+
+    }
+    .information{
+      background-color: #4fc3f726;
+      color: #4FC3F7;
+    }
+    .error{
+      background-color: #e5737312;
+      color: #E57373;
+    }
+  }
+  &-body{
+    text-align: center !important;
+    padding-bottom: 30px !important;
+        padding-top: 32px !important;
+  }
+  &-footer{
+    .cancel{
+      color: #D32F2F !important ;
+    }
+  }
+}
+
+.swal2-container {
+  z-index: 20000 !important;
+}
