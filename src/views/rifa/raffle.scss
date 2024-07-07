@@ -459,16 +459,87 @@
     font-size: 13px;
   }
 
+  #divCurrency {
+
+    width:unset
+    
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  h2.title-h2{
+
+    font-size:23px
+  }
+
+  small{
+
+    font-size:12px
+  }
+
+  #selectedNumber{
+
+    width:165px;
+    font-size: 13px;
+  }
+
+  #cleanButton{
+
+    font-size:11px
+  }
+
+}
+
+@media only screen and (max-width : 481px) and (orientation : portrait) {
+
+  #divCurrency {
+
+    width:unset
+    
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  
+
+
 }
 
 
-@media only screen and (max-width : 412px) and (orientation : portrait) {
+@media only screen and (max-width : 431px) and (orientation : portrait) {
 
 
   .circle{
 
     width:23px
 
+  }
+
+  #divCurrency {
+
+    width:unset
+    
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  h2.title-h2{
+
+    font-size:25px
+
+  }
+
+  small{
+    font-size:13px
   }
 
 }
@@ -507,6 +578,36 @@
     font-size: 13px;
   }
 
+  #divCurrency {
+
+    width:unset
+    
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  h2.title-h2{
+
+    font-size:23px
+
+  }
+
+  small{
+    font-size:12px
+  }
+
+  #selectedNumber{
+
+    width:173px
+  }
+
+  #cleanButton{
+
+    font-size:11px
+  }
 
 
 }
@@ -554,6 +655,37 @@
     font-size: 13px;
   }
 
+  #divCurrency {
+
+    width:unset
+    
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  h2.title-h2{
+
+    font-size:23px
+
+  }
+
+  small{
+    font-size:12px
+  }
+
+  #selectedNumber{
+
+    width:173px
+  }
+
+  #cleanButton{
+
+    font-size:11px
+  }
+
 }
 
 
@@ -598,6 +730,38 @@
   #cleanButton {
 
     font-size: 13px;
+  }
+
+  #divCurrency {
+
+    width:unset
+
+  }
+
+  #divTotalAmount{
+
+    width:18%
+  }
+
+  h2.title-h2{
+
+    font-size:23px
+
+  }
+
+  small{
+    font-size:12px
+  }
+
+  #selectedNumber{
+
+    width:165px;
+    font-size: 13px;
+  }
+
+  #cleanButton{
+
+    font-size:11px
   }
 
 }
