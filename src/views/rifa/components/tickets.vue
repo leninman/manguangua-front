@@ -37,6 +37,22 @@ const raffleDate = formatDate(raffleDateISO)
 const raffleTime = formatTime(raffleDateISO)
 const raffleCurrency = dataRaffle.value.currency.currencyCode
 let numIsPresent = false
+const raffleId = dataRaffle.value.id
+let numbers = []
+let dataTicket = []
+let imageTicket = ''
+
+window.onload = () => {
+  const modal = document.getElementById('myModal');
+  const openModalBtn = document.getElementById('whatsappButton');
+  const closeModalBtn = document.getElementsByClassName('close')[0];
+  const ticketForm = document.getElementById('ticketForm');
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+}
+
 
 
 
@@ -154,7 +170,7 @@ function insertRow() {
         purchasedNumbers.push(document.getElementById("selectedNumber").value)
         document.getElementById("selectedNumber").value = ""
         document.getElementById("totalAmount").innerText = totRaffle
-       
+
 
       } else {
 
@@ -191,12 +207,13 @@ function delRaffleTable() {
 }
 
 function sendMsg() {
-  for (let i = 0; i < purchasedNumbers.length; i++) {
-    messageBody += purchasedNumbers[i];
-    messageBody += ','
-  }
+  // for (let i = 0; i < purchasedNumbers.length; i++) {
+  // messageBody += purchasedNumbers[i];
+  // messageBody += ','
+  //}
 
-  messageBody += raffleDate
+  //messageBody += raffleDate
+  messageBody = imageTicket
   requestObject.sendMessage(phoneNumber, messageBody)
 }
 
@@ -269,10 +286,10 @@ function numberIsTaken(number) {
   let rows = dataTable.getElementsByTagName('tr')
   let isPresent = false
   for (let i = 1; i < rows.length; i++) {
-    var row = dataTable.querySelectorAll('tr')[i];
-    var celda = row.querySelectorAll('td')[3];
-    console.log('El valor de cell es ' + celda.innerText)
-    if (number === celda.innerText) {
+    let row = dataTable.querySelectorAll('tr')[i];
+    let cell = row.querySelectorAll('td')[3];
+    console.log('El valor de cell es ' + cell.innerText)
+    if (number === cell.innerText) {
       isPresent = true
       break
     }
@@ -281,6 +298,38 @@ function numberIsTaken(number) {
   return isPresent
 
 }
+
+function buyTickets() {
+
+  let dataTable = document.getElementById('raffleTable')
+  let rows = dataTable.getElementsByTagName('tr')
+  for (let i = 1; i < rows.length; i++) {
+    var row = dataTable.querySelectorAll('tr')[i];
+    var cell = row.querySelectorAll('td')[3];
+    numbers.push(cell.innerText)
+  }
+
+  const payload = {
+    dataTicket: [
+      {
+        raffleId: raffleId,
+        ticketNumbers: numbers
+      }
+    ]
+  }
+
+ 
+  requestObject.buyTickets(payload)
+    .then(r => {
+      requestObject.getTicketImage(r.data.headboard.serial)
+     
+     
+    })
+  delRaffleTable()
+  refreshTickets()
+}
+
+
 
 
 
@@ -351,6 +400,34 @@ selectItemFromCart();
                 <div class="text-xs-center">
                   <div>
                     <v-btn small @click="delRaffleTable()" id="cleanButton">LIMPIAR</v-btn>
+                  </div>
+                </div>
+              </v-flex>
+              &nbsp;&nbsp;&nbsp;
+              <v-flex xs12 sm6>
+                <div class="text-xs-center">
+                  <div>
+                    <v-btn small @click="sendMsg()" id="whatsappButton">WHATSAPP</v-btn>
+                    <!--<v-btn small id="whatsappButton">WHATSAPP</v-btn>-->
+
+
+
+                  </div>
+                </div>
+              </v-flex>
+              &nbsp;&nbsp;&nbsp;
+              <v-flex xs12 sm6>
+                <div class="text-xs-center">
+                  <div>
+                    <v-btn small @click="delRaffleTable()" id="printButton">IMPRIMIR</v-btn>
+                  </div>
+                </div>
+              </v-flex>
+              &nbsp;&nbsp;&nbsp;
+              <v-flex xs12 sm6>
+                <div class="text-xs-center">
+                  <div>
+                    <v-btn small @click="buyTickets()" id="sellTicketButton">VENDER</v-btn>
                   </div>
                 </div>
               </v-flex>
@@ -438,6 +515,28 @@ selectItemFromCart();
               </div>
             </div>
           </VCardText>
+
+
+
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Información del cliente</h2>
+              <form id="ticketForm">
+                <label for="ci">Nro de cédula:</label>
+                <input type="text" id="ci" name="ci" required>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="surename">Apellido:</label>
+                <input type="text" id="surename" name="surename" required>
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" required>
+                <button type="submit">Enviar</button>
+                <button type="button">Vaciar</button>
+              </form>
+            </div>
+          </div>
         </VWindowItem>
       </VWindow>
     </VCol>

@@ -20,11 +20,24 @@ export const requestObject = {
   },
   buyTickets: async(payload) => {
     try {
-      return await (axiosObject()).post(`Raffle`, payload);
+      const response = await (axiosObject()).post(`Raffle`, payload);
+      return response
     } catch (error) {
       throw error;
     }
   },
+
+  getTicketImage: async(serial) => {
+    try {
+      const response=axiosObject().get(`ticket/image/${serial}`);
+      return response.body
+    }catch (error) {
+      console.error('Error getting image:', error);
+      throw error;
+    }
+  },
+
+
   cancelTicket: async(serial) => {
     try {
       return await axiosObject().put(`ticket/cancel/${serial}`);
