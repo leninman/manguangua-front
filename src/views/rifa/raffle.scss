@@ -438,8 +438,69 @@
 
 }
 
+#div_buttons_1{
+
+  display: flex;
+  position:relative
+
+}
+
+#div_SelectedNumber{
+
+  margin-left: 10px; 
+  margin-right: 10px;
+
+}
+
+#div_buttons_2{
+
+  display:flex; 
+  position:absolute; 
+  top:114.5px; 
+  right:0px
+
+}
+
+#div_whatsAppButton{
+
+  margin-right: 10px;
+
+}
+
+#div_printButton{
+
+  margin-right: 10px;
+}
+
+#div_sellTicketButton{
+
+  position:absolute; 
+  top:230px; 
+  right:0px; 
+  margin-right: 10px;
+
+}
+
+
+@media only screen and (max-width : 590px) and (orientation : landscape) {
+
+  element.style {
+    
+    background-color: red;
+}
+
+}
+
 
 @media only screen and (max-width : 320px) and (orientation : landscape) {
+
+  #whatsappButton, 
+  #cleanButton,
+  #printButton,
+  #sellTicketButton{
+
+    width: 60px;
+  }
 
   #thAction{
 
@@ -475,11 +536,7 @@
     font-size: 14px;
   }
 
-  #cleanButton {
-
-    font-size: 13px;
-  }
-
+ 
   #divCurrency {
 
     width:unset
@@ -507,14 +564,131 @@
     font-size: 13px;
   }
 
-  #cleanButton{
+  #cleanButton,
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton{
 
     font-size:11px
   }
 
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 278px;
+    right: 0px;
+    margin-right: 0px;
+
+  }
+
 }
 
-@media only screen and (max-width : 481px) and (orientation : portrait) {
+
+
+
+@media only screen and (min-width: 560px) and (max-width: 599.5px) and (orientation : portrait){
+
+  small{
+
+    font-size: 10px
+  }
+
+  .title-h2{
+
+    font-size: 18px;
+
+  }
+
+
+  .circle {
+    width: 28px;
+
+  }
+
+  .divText {
+  
+    font-size: 11px;
+  }
+
+  #divCurrency {
+    width: 30%;
+  }
+
+  .text-xs-center{
+
+    font-size: 11px;
+  }
+
+  #thAmount, #thAction {
+ 
+    width: 18%;
+
+  }
+
+  #thNumber {
+
+    width: 21%;
+  }
+
+  #thProduct{
+
+    width: 28%;
+
+  }
+
+  #cleanButton,
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton
+ {
+
+    font-size:11px;
+    width:60px;
+  }
+
+  #whatsappButton{
+
+    width:55px;
+
+  }
+
+  #selectedNumber{
+
+    font-size: 11px;
+    
+  }
+
+
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 270px;
+    right: 0px;
+    margin-right: 10px;
+
+  } 
+
+
+} 
+
+@media only screen and (max-width : 559px) and (orientation : portrait) {
 
   #divCurrency {
 
@@ -524,10 +698,33 @@
 
   #divTotalAmount{
 
-    width:18%
+    width:18%;     
+  
   }
 
-  
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 270px;
+    right: 0px;
+    margin-right: 10px;
+    
+
+  } 
+
+  .circle{
+
+    width: 21px;
+  }
 
 
 }
@@ -538,7 +735,7 @@
 
   .circle{
 
-    width:23px
+    width:21px
 
   }
 
@@ -546,6 +743,11 @@
 
     width:unset
     
+  }
+
+  #selectedNumber{
+
+    font-size: 14px;
   }
 
   #divTotalAmount{
@@ -561,6 +763,33 @@
 
   small{
     font-size:13px
+  }
+
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 280px;
+    right: 0px;
+    margin-right: 10px;
+
+  }
+
+  #cleanButton,
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton
+ {
+
+    font-size:11px;
+    width:60px;
   }
 
 }
@@ -586,7 +815,7 @@
 
   .circle{
 
-    width:23px
+    width:22px
   }
 
   #selectedNumber, .divText{
@@ -594,10 +823,7 @@
     font-size: 14px;
   } 
 
-  #cleanButton {
-
-    font-size: 13px;
-  }
+  
 
   #divCurrency {
 
@@ -625,9 +851,29 @@
     width:173px
   }
 
-  #cleanButton{
+  #cleanButton,
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton{
 
     font-size:11px
+  }
+
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 278px;
+    right: 0px;
+    margin-right: 10px;
+
   }
 
 
@@ -671,11 +917,7 @@
     font-size: 14px;
   }
 
-  #cleanButton {
-
-    font-size: 13px;
-  }
-
+  
   #divCurrency {
 
     width:unset
@@ -702,9 +944,29 @@
     width:173px
   }
 
-  #cleanButton{
+  #cleanButton, 
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton{
 
     font-size:11px
+  }
+
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+
+  #div_sellTicketButton {
+
+    position: absolute;
+    top: 278px;
+    right: 0px;
+    margin-right: 0px;
+
   }
 
 }
@@ -748,9 +1010,12 @@
     font-size: 14px;
   }
 
-  #cleanButton {
+  #cleanButton, 
+  #whatsappButton, 
+  #printButton, 
+  #sellTicketButton {
 
-    font-size: 13px;
+    font-size: 11px;
   }
 
   #divCurrency {
@@ -778,21 +1043,44 @@
 
     width:165px;
     font-size: 13px;
+  } 
+
+  #div_buttons_2{
+
+    position:unset;
+    top: unset;
+    margin-top: 20px;
+    margin-left: 10px;
   }
 
-  #cleanButton{
+  #div_sellTicketButton {
 
-    font-size:11px
+    position: absolute;
+    top: 278px;
+    right: 0px;
+    margin-right: 0px;
+
   }
 
 
+  #div_sellTicketButton {
 
+    position: absolute;
+    top: 278px;
+    right: 0px;
+    margin-right: 0px;
 
-  /* Estilo del modal */
+  }
+ 
+
+}
+
+ /* Estilo del modal */
+
 .modal {
   display: none; /* Ocultar por defecto */
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -800,7 +1088,6 @@
   overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
-}
 
 /* Contenido del modal */
 .modal-content {
