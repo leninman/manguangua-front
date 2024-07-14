@@ -318,12 +318,12 @@ function buyTickets() {
     ]
   }
 
- 
+
   requestObject.buyTickets(payload)
     .then(r => {
       requestObject.getTicketImage(r.data.headboard.serial)
-     
-     
+
+
     })
   delRaffleTable()
   refreshTickets()
@@ -375,15 +375,56 @@ selectItemFromCart();
               <small id="element">
                 <VIcon icon="bx-money" /> Total de boletos elegidos:
                 {{
-        cartStore.numbersByRaffle(route.query.idRaffle)?.length
-      }}
+                  cartStore.numbersByRaffle(route.query.idRaffle)?.length
+                }}
                 boleto<span v-if="cartStore.numbersByRaffle(route.query.idRaffle)?.length > 1
-        ">s</span>
+                ">s</span>
               </small>
             </VCardTitle>
           </VCardItem>
 
-          <v-container fluid class="pa-0">
+          <!--<div id="div_buttons_1" style="display: flex; position:relative">-->
+            <div id="div_buttons_1">
+
+            <!--<div id="div_SelectedNumber" style="margin-left: 10px; margin-right: 10px;">-->
+              <div id="div_SelectedNumber">
+              <v-text-field id="selectedNumber" v-model="selectedNumber" @keyup.enter="handleEnter()"
+                placeholder="Introduzca el número" maxlength="4"></v-text-field>
+            </div>
+
+            <div>
+              <v-btn small @click="delRaffleTable()" id="cleanButton">LIMPIAR</v-btn>
+            </div>
+
+          </div>
+
+          <!--<div id="div_buttons_2" style="display:flex; position:absolute; top:114.5px; right:0px">-->
+            <div id="div_buttons_2">
+            <!--<div id="div_whatsAppButton"style="margin-right: 10px;">-->
+            <div id="div_whatsAppButton">
+              <v-btn small @click="sendMsg()" id="whatsappButton">WHATSAPP</v-btn>
+            </div>
+
+            <!--<div id="div_printButton" style="margin-right: 10px;">-->
+            <div id="div_printButton">  
+              <v-btn small @click="delRaffleTable()" id="printButton">IMPRIMIR</v-btn>
+            </div>
+
+          </div>
+         
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <div>
+            <!--<div id="div_sellTicketButton" style="position:absolute; top:230px; right:0px; margin-right: 10px;">-->
+              <div id="div_sellTicketButton">
+              <v-btn small @click="buyTickets()" id="sellTicketButton">VENDER</v-btn>
+            </div>
+          </div>
+
+          <!--<v-container fluid class="pa-0">
             <v-layout row wrap align-center>
               <v-flex xs12 sm6>
                 <div class="text-xs-center">
@@ -408,10 +449,7 @@ selectItemFromCart();
                 <div class="text-xs-center">
                   <div>
                     <v-btn small @click="sendMsg()" id="whatsappButton">WHATSAPP</v-btn>
-                    <!--<v-btn small id="whatsappButton">WHATSAPP</v-btn>-->
-
-
-
+                  
                   </div>
                 </div>
               </v-flex>
@@ -432,7 +470,7 @@ selectItemFromCart();
                 </div>
               </v-flex>
             </v-layout>
-          </v-container>
+          </v-container>-->
           &nbsp;&nbsp;&nbsp;
           <v-container fluid class="pa-0">
             <v-layout row wrap align-center>
@@ -507,9 +545,9 @@ selectItemFromCart();
             <div id="lista">
               <div id="pagingBox" class="container" :style="{ height: props.heightScreen + 'px !important' }">
                 <div v-for="data in listForTemplate" :id="data.number" :key="data.number" :class="{
-        block: data.used,
-        selected: data.selected,
-      }">
+                  block: data.used,
+                  selected: data.selected,
+                }">
                   {{ data.number }}
                 </div>
               </div>
